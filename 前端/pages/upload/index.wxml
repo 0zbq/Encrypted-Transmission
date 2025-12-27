@@ -1,0 +1,105 @@
+<view class="section">
+  <view class="title">加密上传</view>
+  
+  
+
+  <!-- 加密方式选择 -->
+  <view class="row modes">
+    <button class="chip {{mode==='password'?'chip-active':''}}" size="mini" data-mode="password" bindtap="setMode">
+      <text class="icon">🔐</text>密码
+    </button>
+    <button class="chip {{mode==='location'?'chip-active':''}}" size="mini" data-mode="location" bindtap="setMode">
+      <text class="icon">📍</text>位置
+    </button>
+  </view>
+
+  <!-- 加密方式说明 -->
+  <view wx:if="{{mode}}" class="mode-desc">
+    <text wx:if="{{mode === 'password'}}" class="desc-text">🔐 使用密码加密，接收方需要输入相同密码</text>
+    <text wx:if="{{mode === 'location'}}" class="desc-text">📍 基于位置验证，需要在指定半径内</text>
+  </view>
+
+  <!-- 密码输入 -->
+  <view wx:if="{{mode === 'password'}}" class="field">
+    <text>设置密码</text>
+    <input 
+      placeholder="请输入6-20位密码" 
+      password 
+      maxlength="20"
+      bindinput="onInput" 
+      data-field="passwordUpload" 
+      value="{{passwordUpload}}"
+    />
+    <text wx:if="{{passwordUpload && passwordUpload.length < 6}}" class="error-text">密码至少6位</text>
+  </view>
+
+  <!-- 位置验证设置 -->
+  <view wx:if="{{mode === 'location'}}" class="field">
+    <view class="space-between">
+      <text>允许半径：{{radius}} 米</text>
+      <text class="muted">将使用当前位置</text>
+    </view>
+    <slider min="50" max="500" step="50" value="{{radius}}" bindchange="onRadiusChange" />
+    
+    <!-- 位置精度显示 -->
+    <view wx:if="{{currentLocation}}" class="location-info">
+      <text class="location-detail">📍 当前位置已获取</text>
+      <text wx:if="{{locationAccuracy}}" class="location-accuracy">
+        精度：约 {{Math.round(locationAccuracy)}} 米
+        <text wx:if="{{locationAccuracy > 200}}" class="accuracy-warning"> (精度较低)</text>
+      </text>
+    </view>
+    
+    <view class="location-tips">
+      <text class="muted">💡 提示：接收方需要在 {{radius}} 米范围内才能下载</text>
+      <text wx:if="{{locationAccuracy > 200}}" class="muted accuracy-tip">⚠️ 当前精度较低，建议到开阔地带或使用WiFi辅助定位</text>
+    </view>
+  </view>
+
+  <!-- 文件选择 -->
+  <view class="file-section">
+    <view class="row choose">
+      <button size="mini" bindtap="chooseImage" disabled="{{uploading}}">
+        <text wx:if="{{!chosenFile}}">📷 选择图片</text>
+        <text wx:else>🔄 重新选择</text>
+      </button>
+      <text class="muted">{{chosenFile ? status : '未选择图片'}}</text>
+    </view>
+    
+    <!-- 文件信息预览 -->
+    <view wx:if="{{chosenFile}}" class="file-preview">
+      <text class="file-info">📄 {{chosenFile.sizeText}}</text>
+    </view>
+  </view>
+
+  <!-- 上传按钮 -->
+  <view class="upload-section">
+    <button 
+      class="btn-primary" 
+      loading="{{uploading}}" 
+      disabled="{{uploading || !canUpload}}" 
+      bindtap="encryptAndUpload"
+    >
+      {{uploading ? uploadProgress : '🔒 加密并上传'}}
+    </button>
+  </view>
+
+  <!-- 状态提示 -->
+  <view wx:if="{{status}}" class="status-box {{status.includes('失败') ? 'error' : (status.includes('完成') ? 'success' : '')}}">
+    <text class="status-icon">{{status.includes('失败') ? '❌' : (status.includes('完成') ? '✅' : '⏳')}}</text>
+    <text class="status-text">{{status}}</text>
+  </view>
+
+  <!-- Token复制 -->
+  <view class="token-section" wx:if="{{downloadToken}}">
+    <view class="share-header">
+      <text class="share-title">🎉 上传成功！</text>
+    </view>
+    <view class="token-row">
+      <text class="token-label">下载Token：</text>
+      <text class="token-value selectable">{{downloadToken}}</text>
+      <button size="mini" bindtap="copyToken">📋 复制Token</button>
+    </view>
+  </view>
+</view>
+

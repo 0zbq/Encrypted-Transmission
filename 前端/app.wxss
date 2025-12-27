@@ -1,0 +1,1050 @@
+page {
+  background: linear-gradient(135deg, #525252 0%, #404040 100%);
+  color: #333;
+  min-height: 100vh;
+}
+
+.page {
+  padding: 40rpx 16rpx;
+  box-sizing: border-box;
+  max-width: 750rpx;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 28rpx;
+  padding: 40rpx;
+  margin-bottom: 32rpx;
+  box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: linear-gradient(90deg, #525252, #7a7a7a, #525252);
+  opacity: 0.8;
+}
+
+.card:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 16rpx 40rpx rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  margin-bottom: 28rpx;
+  position: relative;
+  padding-bottom: 16rpx;
+}
+
+.card-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80rpx;
+  height: 3rpx;
+  background: linear-gradient(90deg, #525252, #7a7a7a);
+  border-radius: 2rpx;
+}
+
+.card-title {
+  display: block;
+  font-size: 38rpx;
+  font-weight: 700;
+  background: linear-gradient(135deg, #525252 0%, #404040 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10rpx;
+  letter-spacing: 1rpx;
+}
+
+.card-sub {
+  color: #666;
+  font-size: 28rpx;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 28rpx;
+  padding: 40rpx;
+  margin: 32rpx 0;
+  box-shadow: 0 12rpx 40rpx rgba(0,0,0,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: linear-gradient(90deg, #525252, #7a7a7a, #525252);
+  opacity: 0.8;
+}
+
+.section:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 16rpx 48rpx rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #525252 0%, #404040 100%);
+  color: #fff;
+  border-radius: 20rpx;
+  padding: 28rpx 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 32rpx;
+  box-shadow: 0 12rpx 24rpx rgba(82, 82, 82, 0.35);
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 1rpx;
+  margin: 24rpx 0;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.btn-primary:active::before {
+  left: 100%;
+}
+
+.btn-primary:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 6rpx 12rpx rgba(82, 82, 82, 0.35);
+}
+
+.btn-primary[disabled] {
+  opacity: 0.5;
+  transform: none;
+  box-shadow: 0 4rpx 8rpx rgba(82, 82, 82, 0.2);
+}
+
+.btn-ghost {
+  color: #525252;
+  border: 2px solid #525252;
+  border-radius: 20rpx;
+  padding: 24rpx 0;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: rgba(82, 82, 82, 0.05);
+  font-size: 28rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ghost::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(82, 82, 82, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.btn-ghost:active::before {
+  left: 100%;
+}
+
+.btn-ghost:active {
+  background: rgba(82, 82, 82, 0.1);
+  transform: scale(0.98);
+  border-color: #404040;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  margin: 16rpx 0;
+}
+
+.modes {
+  flex-wrap: wrap;
+  gap: 16rpx;
+  margin: 20rpx 0;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 16rpx 24rpx;
+  border-radius: 32rpx;
+  background: rgba(82, 82, 82, 0.1);
+  color: #525252;
+  border: 2px solid transparent;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.chip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.chip:active::before {
+  left: 100%;
+}
+
+.chip-active {
+  background: linear-gradient(135deg, #525252 0%, #404040 100%);
+  color: #fff;
+  box-shadow: 0 8rpx 16rpx rgba(82, 82, 82, 0.3);
+  transform: scale(1.05);
+}
+
+.mode-item {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.field {
+  margin: 28rpx 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.label {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 0.5rpx;
+  margin-bottom: 4rpx;
+}
+
+.input {
+  padding: 24rpx 28rpx;
+  border: 2px solid #e8ecf1;
+  border-radius: 18rpx;
+  font-size: 28rpx;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  color: #333;
+  margin: 8rpx 0;
+}
+
+.input:focus {
+  border-color: #525252;
+  box-shadow: 0 0 0 6rpx rgba(82, 82, 82, 0.08);
+  background: #fff;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.muted {
+  color: #666;
+  font-size: 26rpx;
+  opacity: 0.7;
+}
+
+.choose {
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 新增样式 */
+.flex-1 {
+  flex: 1;
+}
+
+.status-box {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background: rgba(82, 82, 82, 0.05);
+  border-radius: 12rpx;
+  border-left: 4rpx solid #525252;
+}
+
+.share {
+  margin-top: 24rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  padding: 24rpx;
+  background: rgba(82, 82, 82, 0.05);
+  border-radius: 16rpx;
+}
+
+canvas {
+  border-radius: 12rpx;
+  margin: 16rpx auto;
+  display: block;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000rpx 0;
+  }
+  100% {
+    background-position: 1000rpx 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 43% {
+    transform: translateY(-8rpx);
+  }
+  70% {
+    transform: translateY(-4rpx);
+  }
+  90% {
+    transform: translateY(-2rpx);
+  }
+}
+
+.card, .section {
+  animation: fadeIn 0.5s ease-out;
+  transition: all 0.3s ease;
+}
+
+.card:hover, .section:hover {
+  transform: translateY(-4rpx);
+  box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.12);
+}
+
+/* 页面切换动画 */
+.page {
+  animation: slideInRight 0.4s ease-out;
+}
+
+/* 按钮动画效果 */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:active::after {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+/* 芯片点击动画 */
+.chip {
+  position: relative;
+  overflow: hidden;
+}
+
+.chip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.chip:active::after {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+/* 输入框焦点动画 */
+.input {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  transform: translateY(-2rpx);
+}
+
+/* 加载动画 */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-icon {
+  animation: rotate 1s linear infinite;
+}
+
+/* 成功动画 */
+@keyframes checkmark {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.success-animation {
+  animation: bounce 0.6s ease-out;
+}
+
+/* 滑块样式增强 */
+slider {
+  margin: 16rpx 0;
+  position: relative;
+}
+
+slider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: linear-gradient(90deg, #525252, #404040);
+  transform: translateY(-50%);
+  border-radius: 2rpx;
+  z-index: -1;
+}
+
+/* 按钮组样式增强 */
+button[size="mini"] {
+  background: rgba(82, 82, 82, 0.1);
+  color: #525252;
+  border: 1px solid #525252;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  padding: 8rpx 16rpx;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button[size="mini"]:active {
+  background: #525252;
+  color: #fff;
+  transform: scale(0.95);
+}
+
+/* 卡片内容动画 */
+.card-header, .section-header {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.card-content, .section-content {
+  animation: slideInRight 0.6s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+/* 列表项动画 */
+@keyframes listItemSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.list-item {
+  animation: listItemSlideIn 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+.list-item:nth-child(1) { animation-delay: 0.1s; }
+.list-item:nth-child(2) { animation-delay: 0.2s; }
+.list-item:nth-child(3) { animation-delay: 0.3s; }
+.list-item:nth-child(4) { animation-delay: 0.4s; }
+.list-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* 微交互动画 */
+.interactive-element {
+  transition: all 0.2s ease;
+}
+
+.interactive-element:active {
+  transform: scale(0.98);
+}
+
+/* 悬浮提示动画 */
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tooltip {
+  animation: tooltipFadeIn 0.3s ease-out;
+}
+
+/* 进度条动画 */
+@keyframes progressPulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.progress-bar {
+  animation: progressPulse 1.5s ease-in-out infinite;
+}
+
+/* 页面过渡动画 */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease-out;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.3s ease-in;
+}
+
+/* 响应式设计 */
+/* 小屏幕设备 */
+@media (max-width: 750rpx) {
+  .page {
+    padding: 20rpx 16rpx;
+  }
+  
+  .card, .section {
+    padding: 28rpx;
+    margin-bottom: 24rpx;
+  }
+  
+  .card-title, .page-title {
+    font-size: 32rpx;
+  }
+  
+  .card-sub, .page-subtitle {
+    font-size: 24rpx;
+  }
+  
+  .chip {
+    padding: 12rpx 20rpx;
+    font-size: 26rpx;
+  }
+  
+  .btn-primary, .btn-ghost {
+    padding: 20rpx 0;
+    font-size: 28rpx;
+  }
+  
+  .input {
+    padding: 20rpx;
+    font-size: 26rpx;
+  }
+  
+  .header-icon {
+    width: 80rpx;
+    height: 80rpx;
+    font-size: 48rpx;
+  }
+}
+
+/* 中等屏幕设备 */
+@media (min-width: 751rpx) and (max-width: 1200rpx) {
+  .page {
+    padding: 30rpx 24rpx;
+  }
+  
+  .card, .section {
+    padding: 32rpx;
+    margin-bottom: 28rpx;
+  }
+  
+  .modes {
+    justify-content: center;
+  }
+  
+  .chip {
+    min-width: 140rpx;
+  }
+}
+
+/* 大屏幕设备 */
+@media (min-width: 1201rpx) {
+  .page {
+    padding: 40rpx 30rpx;
+    max-width: 1400rpx;
+    margin: 0 auto;
+  }
+  
+  .card, .section {
+    padding: 40rpx;
+    margin-bottom: 32rpx;
+  }
+  
+  .card-title, .page-title {
+    font-size: 40rpx;
+  }
+  
+  .card-sub, .page-subtitle {
+    font-size: 28rpx;
+  }
+  
+  .modes {
+    justify-content: flex-start;
+  }
+  
+  .chip {
+    min-width: 160rpx;
+    padding: 18rpx 28rpx;
+  }
+  
+  .btn-primary, .btn-ghost {
+    padding: 24rpx 0;
+    font-size: 32rpx;
+  }
+  
+  .input {
+    padding: 26rpx;
+    font-size: 30rpx;
+  }
+}
+
+/* 横屏适配 */
+@media (orientation: landscape) {
+  .page {
+    padding: 20rpx 16rpx;
+  }
+  
+  .card-header, .page-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 20rpx;
+  }
+  
+  .modes {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10rpx;
+  }
+  
+  .chip {
+    flex-shrink: 0;
+  }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .card, .section {
+    border-width: 0.5rpx;
+  }
+  
+  .input {
+    border-width: 1rpx;
+  }
+  
+  button {
+    border-width: 1rpx;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .chip, .btn-primary, .btn-ghost, button[size="mini"] {
+    min-height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input {
+    min-height: 80rpx;
+  }
+  
+  .card:active, .section:active {
+    transform: scale(0.98);
+  }
+}
+
+/* 小屏幕手机特殊优化 */
+@media (max-height: 800rpx) {
+  .page-header {
+    padding: 30rpx 20rpx;
+  }
+  
+  .header-icon {
+    width: 70rpx;
+    height: 70rpx;
+    font-size: 40rpx;
+  }
+  
+  .page-title {
+    font-size: 32rpx;
+  }
+  
+  .page-subtitle {
+    font-size: 22rpx;
+  }
+  
+  .card, .section {
+    padding: 24rpx;
+    margin-bottom: 20rpx;
+  }
+}
+
+/* 大屏平板优化 */
+@media (min-width: 1500rpx) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: 30rpx;
+  }
+  
+  .card, .section {
+    max-width: 800rpx;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 可访问性优化 */
+@media (prefers-reduced-motion: reduce) {
+  page, view, text, button, input {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  page {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    color: #f0f0f0;
+  }
+  
+  .card, .section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .card-title, .page-title, .section-title {
+    color: #f0f0f0;
+  }
+  
+  .card-sub, .page-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .input {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #f0f0f0;
+  }
+  
+  .muted {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .chip {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f0f0f0;
+  }
+  
+  .chip-active {
+    background: linear-gradient(135deg, #7a7a7a 0%, #5a5a5a 100%);
+    color: #fff;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #7a7a7a 0%, #5a5a5a 100%);
+  }
+  
+  .btn-ghost {
+    color: #f0f0f0;
+    border-color: #f0f0f0;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  button[size="mini"] {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f0f0f0;
+    border-color: #f0f0f0;
+  }
+}
+
+/* ============================================
+   文本渲染优化 - 解决字体重叠问题
+   ============================================ */
+
+/* 1. 基础文本渲染优化 */
+text, view[class*="text"], view[class*="title"], view[class*="label"] {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+}
+
+/* 2. 确保所有文本元素有足够的行高 */
+.card-title, .page-title, .section-title,
+.card-sub, .page-subtitle, .section-subtitle,
+.label, .muted, .desc-text, .status-text,
+.share-text, .token-value, .qr-title, .qr-tips,
+.field text, .share text, .token-label,
+.result-title, .file-path, .key-textarea,
+.token-textarea, .error-text, .success-text {
+  line-height: 1.5 !important;
+}
+
+/* 3. 为小字号文本增加字间距 */
+.muted, .desc-text, .status-text, .share-text,
+.token-value, .qr-tips, .field text, .share text,
+.token-label, .file-path, .key-textarea,
+.token-textarea, .error-text, .success-text {
+  letter-spacing: 0.5rpx !important;
+}
+
+/* 4. 为标题和重要文本增加字间距 */
+.card-title, .page-title, .section-title,
+.card-sub, .page-subtitle, .section-subtitle,
+.label, .result-title, .qr-title {
+  letter-spacing: 1rpx !important;
+}
+
+/* 5. 确保输入框文本有足够的行高和间距 */
+.input, .key-textarea, .token-textarea {
+  line-height: 1.6 !important;
+  letter-spacing: 0.5rpx !important;
+  padding: 24rpx 28rpx !important;
+}
+
+/* 6. 修复按钮文本 */
+.btn-primary, .btn-ghost, .btn-preview,
+button[size="mini"], .chip, .choose button,
+.share button, .network-test button {
+  line-height: 1.4 !important;
+  letter-spacing: 0.5rpx !important;
+}
+
+/* 7. 长文本换行处理 */
+.share-text, .token-value, .file-path,
+.key-textarea, .token-textarea, .muted,
+.desc-text, .qr-tips {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+}
+
+/* 8. 防止文本溢出容器 */
+.card, .section, .share, .status-box,
+.mode-desc, .qr-section, .result-section,
+.token-section, .file-preview, .key-tips,
+.location-tips, .choose {
+  overflow: visible !important;
+}
+
+/* 9. 为密集文本增加额外间距 */
+.field, .share, .status-box, .mode-desc,
+.qr-section, .result-section, .token-section {
+  gap: 16rpx !important;
+}
+
+/* 10. 修复特定页面的文本样式 */
+/* 上传页面 */
+page[route*="upload"] .share-text,
+page[route*="upload"] .token-value,
+page[route*="upload"] .desc-text {
+  line-height: 1.6 !important;
+  padding: 20rpx !important;
+}
+
+/* 下载页面 */
+page[route*="download"] .key-textarea,
+page[route*="download"] .token-textarea,
+page[route*="download"] .share-text {
+  line-height: 1.6 !important;
+  padding: 20rpx !important;
+}
+
+/* 11. 修复小屏幕上的文本显示 */
+@media (max-width: 750rpx) {
+  .card-title, .page-title, .section-title {
+    font-size: 34rpx !important;
+    line-height: 1.6 !important;
+  }
+  
+  .card-sub, .page-subtitle, .section-subtitle {
+    font-size: 26rpx !important;
+    line-height: 1.5 !important;
+  }
+  
+  .label, .share text, .field text {
+    font-size: 28rpx !important;
+    line-height: 1.5 !important;
+  }
+  
+  .muted, .desc-text, .status-text, .qr-tips {
+    font-size: 24rpx !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* 12. 修复高DPI屏幕上的文本渲染 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  text, view[class*="text"], view[class*="title"], view[class*="label"] {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* 13. 修复触摸设备上的文本选择 */
+@media (hover: none) and (pointer: coarse) {
+  .share-text, .token-value, .key-textarea,
+  .token-textarea, .file-path {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    font-size: 28rpx !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* 14. 修复文本阴影和轮廓，提高可读性 */
+.card-title, .page-title, .section-title {
+  text-shadow: 0 1rpx 2rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 15. 确保渐变文本在不同设备上都能正常显示 */
+.card-title {
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  display: inline-block;
+}
+
+/* 16. 修复字体加载期间的文本显示 */
+@font-face {
+  font-family: 'System Fallback';
+  src: local(-apple-system), local(BlinkMacSystemFont), local('Segoe UI'), local(Roboto), local('Helvetica Neue'), local(Arial), local(sans-serif);
+}
+
+text, view[class*="text"], view[class*="title"] {
+  font-family: 'System Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}

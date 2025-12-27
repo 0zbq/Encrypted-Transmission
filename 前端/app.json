@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/upload/index",
+    "pages/download/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "加密图片传输",
+    "navigationBarBackgroundColor": "#525252",
+    "backgroundColor": "#525252",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "position": "top",
+    "color": "#999999",
+    "selectedColor": "#ffffff",
+    "borderStyle": "white",
+    "backgroundColor": "#525252",
+    "list": [
+      {
+        "pagePath": "pages/upload/index",
+        "text": "上传"
+      },
+      {
+        "pagePath": "pages/download/index",
+        "text": "下载"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于位置验证解锁图片"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

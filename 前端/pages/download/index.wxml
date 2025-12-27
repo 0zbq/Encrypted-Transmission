@@ -1,0 +1,110 @@
+<view class="section">
+  <view class="title">下载解密</view>
+
+  <!-- 验证方式选择 -->
+  <view class="row modes">
+    <button class="chip {{mode==='password'?'chip-active':''}}" size="mini" data-mode="password" bindtap="setMode">
+      <text class="icon">🔐</text>密码
+    </button>
+    <button class="chip {{mode==='location'?'chip-active':''}}" size="mini" data-mode="location" bindtap="setMode">
+      <text class="icon">📍</text>位置
+    </button>
+  </view>
+
+  <!-- 验证方式说明 -->
+  <view wx:if="{{mode}}" class="mode-desc">
+    <text wx:if="{{mode === 'password'}}" class="desc-text">🔐 输入上传时设置的密码进行解密</text>
+    <text wx:if="{{mode === 'location'}}" class="desc-text">📍 在上传时的位置范围内自动解密</text>
+  </view>
+
+  <!-- 下载ID输入 -->
+  <view class="field">
+    <text>下载 ID</text>
+    <textarea style="width: 669rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx" 
+      class="token-textarea" 
+      placeholder="请输入8位下载ID" 
+      bindinput="onInput" 
+      data-field="downloadToken" 
+      value="{{downloadToken}}" 
+      maxlength="8"
+      auto-height
+    />
+    <text wx:if="{{downloadToken && downloadToken.length !== 8}}" class="error-text">下载ID应为8位字符</text>
+  </view>
+
+  <!-- 密码输入 -->
+  <view wx:if="{{mode === 'password' || verifyType === 'password'}}" class="field">
+    <text>解密密码</text>
+    <input 
+      placeholder="请输入解密密码" 
+      password 
+      bindinput="onInput" 
+      data-field="passwordDownload"
+      value="{{passwordDownload}}"
+    />
+  </view>
+
+  
+
+  <!-- 位置验证信息显示 -->
+  <view wx:if="{{mode === 'location' || verifyType === 'location'}}" class="location-status">
+    <!-- 当前位置信息 -->
+    <view wx:if="{{currentLocation}}" class="location-info">
+      <text class="location-detail">📍 当前位置已获取</text>
+      <text wx:if="{{locationAccuracy}}" class="location-accuracy">
+        精度：约 {{Math.round(locationAccuracy)}} 米
+        <text wx:if="{{locationAccuracy > 200}}" class="accuracy-warning"> (精度较低)</text>
+      </text>
+    </view>
+    
+    <!-- 距离信息 -->
+    <view wx:if="{{distance !== null}}" class="distance-info">
+      <text class="distance-detail">
+        {{distance <= radius ? '✅' : '❌'}} 距离目标：{{Math.round(distance)}} 米
+      </text>
+      <text wx:if="{{distance > radius}}" class="distance-error">
+        超出允许范围 {{radius}} 米
+      </text>
+      <text wx:else class="distance-success">
+        在允许范围内
+      </text>
+    </view>
+  </view>
+
+  <!-- 下载按钮 -->
+  <view class="download-section">
+    <button 
+      class="btn-primary" 
+      loading="{{downloading}}" 
+      disabled="{{downloading || !canDownload}}" 
+      bindtap="downloadAndDecrypt"
+     style="width: 277rpx; height: 95rpx; display: flex; box-sizing: border-box; left: -2rpx; top: 10rpx; position: relative">
+      <text wx:if="{{!downloading}}" style="width: 217rpx; height: 82rpx; display: flex; box-sizing: border-box; position: relative; left: 0rpx; top: -18rpx">
+        {{mode === 'location' || verifyType === 'location' ? '获取位置并验证' : '🔓 下载并解密'}}
+      </text>
+      <text wx:else>{{downloadProgress}}</text>
+    </button>
+  </view>
+
+  <!-- 状态提示 -->
+  <view wx:if="{{status}}" class="status-box {{status.includes('失败') || status.includes('错误') ? 'error' : (status.includes('成功') ? 'success' : '')}}">
+    <text class="status-icon">{{status.includes('失败') || status.includes('错误') ? '❌' : (status.includes('成功') ? '✅' : '⏳')}}</text>
+    <text class="status-text">{{status}}</text>
+  </view>
+
+  
+
+  <!-- 解密结果 -->
+  <view wx:if="{{decryptedPath}}" class="result-section">
+    <view class="result-header">
+      <text class="result-title">🎉 解密成功！</text>
+    </view>
+    <view class="preview-section">
+      <button class="btn-preview" bindtap="previewDecrypted">
+        <text>👁️ 预览图片</text>
+      </button>
+      <text class="file-path">已保存至：{{decryptedPath}}</text>
+    </view>
+  </view>
+</view>
+
