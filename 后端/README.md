@@ -467,7 +467,7 @@ scenarios:
 
 如有问题或建议，请通过以下方式联系：
 
-- 📧 Email: your-email@example.com
+- 📧 Email: 17554332506@163.com
 - 🐛 Issues: [GitHub Issues](https://github.com/0zbq/Encrypted-Transmission)
 - 📖 文档: [项目 Wiki](https://github.com/0zbq/Encrypted-Transmission/wiki)
 
